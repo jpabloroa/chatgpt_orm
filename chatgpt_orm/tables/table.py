@@ -1,8 +1,8 @@
 from typing import List, Optional
 from ..column.column import Column
-from .table_alias import ITableAlias
+from .table_alias import TableAlias
 from ..base.entity import IEntity
-from .table_category import ITableCategory
+from .table_category import TableCategory
 
 
 class Table(IEntity):
@@ -40,10 +40,10 @@ class Table(IEntity):
             None,
         )
 
-    _aliases: List[ITableAlias]
+    _aliases: List[TableAlias]
 
     @property
-    def aliases(self) -> List[ITableAlias]:
+    def aliases(self) -> List[TableAlias]:
         """A list of aliases for the column."""
         return self.aliases
 
@@ -54,9 +54,9 @@ class Table(IEntity):
         """Decription of the column content."""
         return self._description
 
-    _categories: List[ITableCategory]
+    _categories: List[TableCategory]
 
     @property
-    def categories(self) -> List[ITableCategory]:
+    def categories(self) -> List[TableCategory]:
         """A list of the categories of the column."""
         return self._categories

@@ -3,7 +3,7 @@ from .entity import IEntity
 
 
 class IDataType(IEntity):
-    """Describes the data type of the column. Allow to map to the specific source."""
+    """Describes the data type."""
 
     _name: str
 

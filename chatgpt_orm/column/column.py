@@ -1,8 +1,8 @@
 from typing import Union, List
-from .column_alias import IColumnAlias
+from .column_alias import ColumnAlias
 from ..base.entity import IEntity
 from ..base.data_type import IDataType
-from .column_category import IColumnCategory
+from .column_category import ColumnCategory
 
 
 class Column(IEntity):
@@ -29,10 +29,10 @@ class Column(IEntity):
         """Data type of the column."""
         return self._data_type
 
-    _aliases: List[IColumnAlias]
+    _aliases: List[ColumnAlias]
 
     @property
-    def aliases(self) -> List[IColumnAlias]:
+    def aliases(self) -> List[ColumnAlias]:
         """A list of aliases for the column."""
         return self.aliases
 
@@ -43,9 +43,9 @@ class Column(IEntity):
         """Decription of the column content."""
         return self._description
 
-    _categories: List[IColumnCategory]
+    _categories: List[ColumnCategory]
 
     @property
-    def categories(self) -> List[IColumnCategory]:
+    def categories(self) -> List[ColumnCategory]:
         """A list of the categories of the column."""
         return self._categories
